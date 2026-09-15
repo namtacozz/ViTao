@@ -1,0 +1,32 @@
+{
+  "riotAccount": {
+    "gameName": "Búa",
+    "tagLine": "PUTIN",
+    "region": "VN"
+  },
+  "lol": {
+    "rank": "Kim Cương II",
+    "tier": "Diamond II",
+    "lp": 68,
+    "winRate": 56.5,
+    "topChampions": [
+      "Yone",
+      "Sylas",
+      "Aatrox",
+      "Lee Sin"
+    ]
+  },
+  "tft": {
+    "rank": "Cao Thủ",
+    "tier": "Master",
+    "lp": 184,
+    "top4Rate": 59.2,
+    "favoriteTraits": [
+      "Thích Khách",
+      "Học Giả",
+      "Vệ Binh",
+      "Đột Biến"
+    ]
+  },
+  "savedComps": []
+}
