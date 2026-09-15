@@ -12,7 +12,6 @@ import { FloatingPlayer } from './components/FloatingPlayer';
 import { CommandPalette } from './components/CommandPalette';
 import { AdminAuthModal } from './components/AdminAuthModal';
 import { HabitTracker } from './components/HabitTracker';
-import { BrowserWorkspaceView } from './components/BrowserWorkspaceView';
 import { Heart, Sparkles } from 'lucide-react';
 import { GithubIcon } from './components/Icons';
 
@@ -39,8 +38,6 @@ const MainApp: React.FC = () => {
             <HabitTracker />
           </>
         )}
-
-        {activeTab === 'browser' && <BrowserWorkspaceView />}
 
         {activeTab === 'study' && <StudyView />}
 
