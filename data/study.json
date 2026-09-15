@@ -1,0 +1,148 @@
+{
+  "targetCpa": 3.7,
+  "semesters": [
+    {
+      "id": "sem-2025-1",
+      "name": "Học kỳ 1 (2025 - 2026)",
+      "year": "2025-2026",
+      "gpa10": 8.85,
+      "gpa4": 3.65,
+      "courses": [
+        {
+          "id": "c1",
+          "code": "IT3020",
+          "name": "Toán Rời Rạc & Cấu Trúc Dữ Liệu",
+          "credits": 3,
+          "scoreProcess": 9,
+          "scoreExam": 8.5,
+          "score10": 8.7,
+          "score4": 3.7,
+          "letterGrade": "A"
+        },
+        {
+          "id": "c2",
+          "code": "IT3040",
+          "name": "Lập Trình Hướng Đối Tượng",
+          "credits": 3,
+          "scoreProcess": 9.5,
+          "scoreExam": 9,
+          "score10": 9.2,
+          "score4": 4,
+          "letterGrade": "A+"
+        },
+        {
+          "id": "c3",
+          "code": "IT4010",
+          "name": "Cơ Sở Dữ Liệu & SQL",
+          "credits": 3,
+          "scoreProcess": 8.5,
+          "scoreExam": 8,
+          "score10": 8.2,
+          "score4": 3.5,
+          "letterGrade": "B+"
+        },
+        {
+          "id": "c4",
+          "code": "SSH1120",
+          "name": "Triết Học & Phương Pháp Luận",
+          "credits": 2,
+          "scoreProcess": 8,
+          "scoreExam": 8.5,
+          "score10": 8.3,
+          "score4": 3.5,
+          "letterGrade": "B+"
+        },
+        {
+          "id": "c5",
+          "code": "IT4220",
+          "name": "Mạng Máy Tính & An Ninh Mạng",
+          "credits": 3,
+          "scoreProcess": 9,
+          "scoreExam": 8.5,
+          "score10": 8.7,
+          "score4": 3.7,
+          "letterGrade": "A"
+        }
+      ]
+    },
+    {
+      "id": "sem-2024-2",
+      "name": "Học kỳ 2 (2024 - 2025)",
+      "year": "2024-2025",
+      "gpa10": 8.6,
+      "gpa4": 3.58,
+      "courses": [
+        {
+          "id": "c6",
+          "code": "MI1110",
+          "name": "Giải Tích 1 & Đại Số Tuyến Tính",
+          "credits": 4,
+          "scoreProcess": 8,
+          "scoreExam": 8.5,
+          "score10": 8.3,
+          "score4": 3.5,
+          "letterGrade": "B+"
+        },
+        {
+          "id": "c7",
+          "code": "IT1110",
+          "name": "Nhập Môn Tin Học & C/C++",
+          "credits": 3,
+          "scoreProcess": 9.5,
+          "scoreExam": 9.5,
+          "score10": 9.5,
+          "score4": 4,
+          "letterGrade": "A+"
+        },
+        {
+          "id": "c8",
+          "code": "FL1010",
+          "name": "Tiếng Anh Học Thuật B2",
+          "credits": 3,
+          "scoreProcess": 8.5,
+          "scoreExam": 8,
+          "score10": 8.2,
+          "score4": 3.5,
+          "letterGrade": "B+"
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1",
+      "title": "Hoàn thiện đồ án Web ViTao & deploy GitHub Pages",
+      "description": "Tích hợp MetaTFT API, Media Player PiP và mã hóa client-side.",
+      "courseName": "Dự án cá nhân",
+      "dueDate": "2026-09-20",
+      "priority": "urgent",
+      "status": "in-progress"
+    },
+    {
+      "id": "t2",
+      "title": "Luyện đề thi thử giữa kỳ Môn Cơ Sở Dữ Liệu",
+      "description": "Ôn tập chuẩn hóa 3NF, BCNF và truy vấn tối ưu SQL Index.",
+      "courseName": "Cơ Sở Dữ Liệu",
+      "dueDate": "2026-09-28",
+      "priority": "normal",
+      "status": "todo"
+    },
+    {
+      "id": "t3",
+      "title": "Nộp báo cáo bài tập lớn Lập trình Hướng đối tượng",
+      "description": "Clean code mô hình Factory và Singleton trong C++.",
+      "courseName": "Lập Trình Hướng Đối Tượng",
+      "dueDate": "2026-09-15",
+      "priority": "urgent",
+      "status": "completed"
+    }
+  ],
+  "notes": [
+    {
+      "id": "n1",
+      "title": "Chiến thuật giữ GPA trên 3.6",
+      "content": "1. Điểm danh và bài tập tuần luôn lấy trọn 10 điểm.\n2. Giữa kỳ học trước 1 tuần, làm hết bài tập ví dụ của thầy cô.\n3. Nhóm đồ án chọn người có trách nhiệm hoặc gánh phần core.",
+      "updatedAt": "2026-09-10"
+    }
+  ]
+}
