@@ -9,14 +9,15 @@ import {
   Search,
   CloudUpload,
   Sparkles,
-  Music
+  Music,
+  Compass
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useData } from '../context/DataContext';
 import { usePlayer } from '../context/PlayerContext';
 import { YoutubeIcon } from './Icons';
 
-export type TabType = 'overview' | 'study' | 'gaming' | 'media' | 'vault';
+export type TabType = 'overview' | 'browser' | 'study' | 'gaming' | 'media' | 'vault';
 
 interface NavbarProps {
   activeTab: TabType;
@@ -37,8 +38,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const tabs: { id: TabType; label: string; icon: React.ElementType }[] = [
     { id: 'overview', label: 'Tổng Quan', icon: LayoutDashboard },
+    { id: 'browser', label: 'Trình Duyệt & Hub', icon: Compass },
     { id: 'study', label: 'Học Tập & Việc', icon: GraduationCap },
-    { id: 'gaming', label: 'Gaming & TFT Meta', icon: Gamepad2 },
+    { id: 'gaming', label: 'Gaming & TFT', icon: Gamepad2 },
     { id: 'media', label: 'YouTube & Nhạc', icon: YoutubeIcon },
     { id: 'vault', label: 'Két Sắt Mật', icon: ShieldCheck },
   ];

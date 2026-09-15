@@ -93,7 +93,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({ isOpen, onClose 
                     type="password"
                     value={passwordInput}
                     onChange={(e) => setPasswordInput(e.target.value)}
-                    placeholder="Nhập mật mã (Mặc định: 123456 hoặc namtacozz)"
+                    placeholder="Nhập mật mã (Mặc định: 0357267987)"
                     className="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
                     autoFocus
                   />
@@ -106,7 +106,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({ isOpen, onClose 
                   </p>
                 )}
                 <p className="mt-2 text-[11px] text-slate-400">
-                  💡 Mẹo: Nhập <code className="text-cyan-400 bg-slate-800 px-1 py-0.5 rounded">123456</code> hoặc <code className="text-cyan-400 bg-slate-800 px-1 py-0.5 rounded">namtacozz</code> để mở khóa.
+                  💡 Mẹo: Nhập <code className="text-cyan-400 bg-slate-800 px-1 py-0.5 rounded">0357267987</code> để mở khóa quyền chủ nhân.
                 </p>
               </div>
 

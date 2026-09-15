@@ -53,7 +53,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const storedHash = localStorage.getItem('vitao_pin_hash');
       const inputHash = await hashPassword(password);
 
-      if (storedHash ? storedHash === inputHash : (password === '123456' || password === 'admin' || password === 'namtacozz')) {
+      if (storedHash ? storedHash === inputHash : (password === '0357267987' || password === '123456' || password === 'namtacozz')) {
         setIsAdmin(true);
         setMasterKey(password);
         sessionStorage.setItem('vitao_is_admin', 'true');
