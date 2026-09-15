@@ -1,12 +1,13 @@
 import { AppData, TFTComp } from '../types';
+import duckAvatar from '../assets/avatar.jpg';
 
 export const INITIAL_APP_DATA: AppData = {
   profile: {
-    name: 'Namtacozz',
-    handle: '@namtacozz',
+    name: 'Hột Vịt Lộn',
+    handle: '@hotvitlon',
     title: 'Fullstack Developer & TFT Tactician',
     bio: 'Đam mê xây dựng web hiện đại, khám phá công nghệ mới, leo rank TFT và tạo ra những công cụ hữu ích cho bản thân. "Tất cả là vì tao" ⚡',
-    avatarUrl: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=400&q=80',
+    avatarUrl: duckAvatar,
     coverUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
     status: {
       text: 'Đang mài giũa ViTao Hub & leo rank Thách Đấu',
@@ -145,7 +146,7 @@ export const INITIAL_APP_DATA: AppData = {
 
   gaming: {
     riotAccount: {
-      gameName: 'Namtacozz',
+      gameName: 'Hột Vịt Lộn',
       tagLine: 'VN2',
       region: 'VN'
     },
@@ -257,7 +258,7 @@ export const INITIAL_APP_DATA: AppData = {
         artist: 'Lofi Girl',
         youtubeId: 'jfKfPfyJRdk',
         duration: 'LIVE',
-        thumbnail: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=300&q=80'
+        thumbnail: 'https://i.ytimg.com/vi/jfKfPfyJRdk/hqdefault.jpg'
       },
       {
         id: 'tr-2',
@@ -265,7 +266,7 @@ export const INITIAL_APP_DATA: AppData = {
         artist: 'Lofi Girl Synthwave',
         youtubeId: '4xDzrJKXOOY',
         duration: 'LIVE',
-        thumbnail: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=300&q=80'
+        thumbnail: 'https://i.ytimg.com/vi/4xDzrJKXOOY/hqdefault.jpg'
       },
       {
         id: 'tr-3',
@@ -273,7 +274,7 @@ export const INITIAL_APP_DATA: AppData = {
         artist: 'Riot Games Music',
         youtubeId: 'zF5Ddo9JDPY',
         duration: '3:20',
-        thumbnail: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=300&q=80'
+        thumbnail: 'https://i.ytimg.com/vi/zF5Ddo9JDPY/hqdefault.jpg'
       },
       {
         id: 'tr-4',
@@ -281,7 +282,81 @@ export const INITIAL_APP_DATA: AppData = {
         artist: 'Against The Current',
         youtubeId: 'r6zIGXunKCg',
         duration: '3:55',
-        thumbnail: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=300&q=80'
+        thumbnail: 'https://i.ytimg.com/vi/r6zIGXunKCg/hqdefault.jpg'
+      }
+    ],
+    playlists: [
+      {
+        id: 'pl-fav',
+        name: 'Bài Hát Yêu Thích',
+        description: 'Tập hợp các bài nhạc ruột nghe hàng ngày',
+        createdAt: '2026-09-15',
+        tracks: [
+          {
+            id: 'tr-1',
+            title: 'Lofi Hip Hop Radio - Beats to Relax/Study to',
+            artist: 'Lofi Girl',
+            youtubeId: 'jfKfPfyJRdk',
+            duration: 'LIVE',
+            thumbnail: 'https://i.ytimg.com/vi/jfKfPfyJRdk/hqdefault.jpg'
+          },
+          {
+            id: 'tr-3',
+            title: 'Awaken (ft. Valerie Broussard) | League of Legends',
+            artist: 'Riot Games Music',
+            youtubeId: 'zF5Ddo9JDPY',
+            duration: '3:20',
+            thumbnail: 'https://i.ytimg.com/vi/zF5Ddo9JDPY/hqdefault.jpg'
+          }
+        ]
+      },
+      {
+        id: 'pl-lofi',
+        name: 'Lofi Chill & Code',
+        description: 'Giai điệu thư giãn tập trung viết code và học tập',
+        createdAt: '2026-09-15',
+        tracks: [
+          {
+            id: 'tr-1',
+            title: 'Lofi Hip Hop Radio - Beats to Relax/Study to',
+            artist: 'Lofi Girl',
+            youtubeId: 'jfKfPfyJRdk',
+            duration: 'LIVE',
+            thumbnail: 'https://i.ytimg.com/vi/jfKfPfyJRdk/hqdefault.jpg'
+          },
+          {
+            id: 'tr-2',
+            title: 'Synthwave Radio - Chill synth / Retro beats',
+            artist: 'Lofi Girl Synthwave',
+            youtubeId: '4xDzrJKXOOY',
+            duration: 'LIVE',
+            thumbnail: 'https://i.ytimg.com/vi/4xDzrJKXOOY/hqdefault.jpg'
+          }
+        ]
+      },
+      {
+        id: 'pl-gaming',
+        name: 'Gaming Hype & TFT',
+        description: 'Nhạc bốc lửa leo rank Thách Đấu và clutch combat',
+        createdAt: '2026-09-15',
+        tracks: [
+          {
+            id: 'tr-3',
+            title: 'Awaken (ft. Valerie Broussard) | League of Legends Cinematic',
+            artist: 'Riot Games Music',
+            youtubeId: 'zF5Ddo9JDPY',
+            duration: '3:20',
+            thumbnail: 'https://i.ytimg.com/vi/zF5Ddo9JDPY/hqdefault.jpg'
+          },
+          {
+            id: 'tr-4',
+            title: 'Legends Never Die | Worlds 2017 Theme Song',
+            artist: 'Against The Current',
+            youtubeId: 'r6zIGXunKCg',
+            duration: '3:55',
+            thumbnail: 'https://i.ytimg.com/vi/r6zIGXunKCg/hqdefault.jpg'
+          }
+        ]
       }
     ],
     quickLinks: [

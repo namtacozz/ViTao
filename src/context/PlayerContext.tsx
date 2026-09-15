@@ -11,6 +11,8 @@ interface PlayerContextType {
   playlist: MusicTrack[];
   volume: number;
   playTrack: (track: MusicTrack, mode?: 'music' | 'video') => void;
+  playPlaylist: (tracks: MusicTrack[], startIndex?: number) => void;
+  setPlaylist: (tracks: MusicTrack[]) => void;
   togglePlay: () => void;
   nextTrack: () => void;
   prevTrack: () => void;
@@ -31,6 +33,19 @@ export const PlayerProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const [isPipOpen, setIsPipOpen] = useState<boolean>(false);
   const [isMinimized, setIsMinimized] = useState<boolean>(false);
   const [volume, setVolume] = useState<number>(80);
+
+  const playPlaylist = (tracks: MusicTrack[], startIndex: number = 0) => {
+    if (!tracks || tracks.length === 0) return;
+    setPlaylist(tracks);
+    const trackToPlay = tracks[startIndex] || tracks[0];
+    setCurrentTrack(trackToPlay);
+    setIsPlaying(true);
+    setIsPipOpen(true);
+    setIsMinimized(false);
+    const t = trackToPlay.title.toLowerCase();
+    const isSong = t.includes('lofi') || t.includes('remix') || t.includes('beats') || t.includes('song') || t.includes('radio') || t.includes('ost') || t.includes('music');
+    setPlaybackMode(isSong ? 'music' : 'video');
+  };
 
   const playTrack = (track: MusicTrack, mode?: 'music' | 'video') => {
     setCurrentTrack(track);
@@ -89,6 +104,8 @@ export const PlayerProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         playlist,
         volume,
         playTrack,
+        playPlaylist,
+        setPlaylist,
         togglePlay,
         nextTrack,
         prevTrack,

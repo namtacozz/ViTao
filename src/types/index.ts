@@ -152,9 +152,19 @@ export interface MusicTrack {
   thumbnail?: string;
 }
 
+export interface Playlist {
+  id: string;
+  name: string;
+  description?: string;
+  cover?: string;
+  tracks: MusicTrack[];
+  createdAt: string;
+}
+
 export interface MediaData {
   youtubeChannels: YouTubeChannel[];
   favoriteTracks: MusicTrack[];
+  playlists: Playlist[];
   quickLinks: {
     id: string;
     title: string;

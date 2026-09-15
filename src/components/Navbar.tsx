@@ -42,7 +42,6 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'study', label: 'Học Tập & Điểm', icon: GraduationCap },
     { id: 'gaming', label: 'Gaming & TFT', icon: Gamepad2 },
     { id: 'media', label: 'Video & Nhạc', icon: Tv },
-    { id: 'vault', label: 'Két Sắt Mật', icon: ShieldCheck },
   ];
 
   return (
@@ -64,7 +63,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       <header className="sticky top-0 z-40 w-full bg-[#242526] border-b border-[#393a3b] shadow-sm">
         <div className="max-w-[1920px] mx-auto px-4 h-14 flex items-center justify-between gap-2">
           {/* Left: Facebook Logo & Search Pill */}
-          <div className="flex items-center gap-2.5 min-w-[240px]">
+          <div className="flex items-center gap-2.5 min-w-[200px]">
             {/* Logo circle */}
             <button
               onClick={() => setActiveTab('overview')}
@@ -79,22 +78,14 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Search Pill Input */}
             <button
               onClick={onOpenSearch}
-              className="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#3a3b3c] hover:bg-[#4e4f50] text-[#b0b3b8] hover:text-[#e4e6eb] text-sm w-56 lg:w-64 transition-colors"
+              className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-full bg-[#3a3b3c] hover:bg-[#4e4f50] text-[#b0b3b8] text-xs transition-colors cursor-pointer w-44 md:w-56"
+              title="Tìm kiếm thông minh (Ctrl+K)"
             >
               <Search className="w-4 h-4 text-[#b0b3b8]" />
-              <span className="truncate text-xs">Tìm kiếm trên ViTao...</span>
-              <kbd className="hidden lg:inline ml-auto font-mono text-[10px] px-1.5 py-0.5 rounded bg-[#242526] text-[#b0b3b8] border border-[#393a3b]">
-                Ctrl K
+              <span className="truncate">Tìm kiếm trên ViTao...</span>
+              <kbd className="hidden lg:inline font-mono text-[10px] px-1.5 py-0.5 rounded bg-[#242526] text-[#b0b3b8] ml-auto">
+                ⌘K
               </kbd>
-            </button>
-
-            {/* Mobile Search Button */}
-            <button
-              onClick={onOpenSearch}
-              className="sm:hidden fb-circle-btn"
-              title="Tìm kiếm"
-            >
-              <Search className="w-4 h-4" />
             </button>
           </div>
 
@@ -124,58 +115,44 @@ export const Navbar: React.FC<NavbarProps> = ({
             })}
           </nav>
 
-          {/* Right: Quick Action Circle Buttons */}
-          <div className="flex items-center justify-end gap-2 min-w-[240px]">
-            {/* Save to GitHub button (if unsaved changes) */}
+          {/* Right: Consolidated Single Setting & Account Button */}
+          <div className="flex items-center justify-end gap-2 min-w-[200px]">
+            {/* Save to GitHub quick button if unsaved changes exist */}
             {isAdmin && hasUnsavedChanges && (
               <button
                 onClick={() => commitToGitHub()}
                 disabled={isSaving}
                 title="Lưu thay đổi lên GitHub"
-                className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#1877f2] hover:bg-[#166fe5] text-white text-xs font-bold shadow-md transition-all disabled:opacity-50"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#1877f2] hover:bg-[#166fe5] text-white text-xs font-bold shadow-md transition-all disabled:opacity-50"
               >
                 <CloudUpload className="w-4 h-4 animate-bounce" />
-                <span className="hidden lg:inline">{isSaving ? 'Đang lưu...' : 'Lưu lên GitHub'}</span>
+                <span className="hidden lg:inline">{isSaving ? 'Đang lưu...' : 'Lưu'}</span>
               </button>
             )}
 
-            {/* Messenger / Music Player floating toggle */}
-            <button
-              onClick={() => setIsPipOpen(true)}
-              title="Mở Trình phát nổi / Nhạc Messenger"
-              className={`fb-circle-btn relative ${
-                isPlaying ? 'bg-[#1877f2] text-white animate-pulse' : ''
-              }`}
-            >
-              <MessageCircle className="w-5 h-5" />
-              {isPlaying && (
-                <span className="absolute -top-0.5 -right-0.5 w-3 h-3 rounded-full bg-[#31a24c] border-2 border-[#242526]"></span>
-              )}
-            </button>
-
-            {/* Admin Lock / Unlock button */}
+            {/* Single Unified Setting Button (combines Profile, Lock, Vault & Messenger) */}
             <button
               onClick={onOpenAuthModal}
-              title={isAdmin ? 'Thiết lập Chủ nhân (Admin)' : 'Mở khóa quyền Chủ nhân'}
-              className="fb-circle-btn"
+              title={`Cài đặt & Tài khoản: ${data.profile.name} (${isAdmin ? 'Đã mở khóa' : 'Đang khóa'})`}
+              className="relative p-1 rounded-full hover:bg-[#3a3b3c] transition-all flex items-center gap-2 group cursor-pointer focus:outline-none"
             >
-              {isAdmin ? <Unlock className="w-5 h-5 text-[#1877f2]" /> : <Lock className="w-5 h-5" />}
-            </button>
-
-            {/* User Profile Avatar with Online Dot */}
-            <button
-              onClick={onOpenAuthModal}
-              className="relative p-0.5 rounded-full hover:ring-2 hover:ring-[#1877f2] transition-all"
-              title={`Trang cá nhân của ${data.profile.name}`}
-            >
-              <div className="w-9 h-9 rounded-full overflow-hidden bg-[#3a3b3c] border border-[#393a3b]">
-                <img
-                  src={data.profile.avatarUrl}
-                  alt={data.profile.name}
-                  className="w-full h-full object-cover"
-                />
+              <div className="relative">
+                <div className="w-10 h-10 rounded-full overflow-hidden bg-[#3a3b3c] border-2 border-[#393a3b] group-hover:border-[#1877f2] transition-colors">
+                  <img
+                    src={data.profile.avatarUrl}
+                    alt={data.profile.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Active Online Indicator Dot */}
+                <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#31a24c] border-2 border-[#242526]" />
+                {/* Corner Lock / Status Badge */}
+                <span className={`absolute -top-1 -right-1 w-4 h-4 rounded-full flex items-center justify-center text-[10px] border border-[#242526] shadow-sm ${
+                  isAdmin ? 'bg-[#1877f2] text-white' : 'bg-[#3a3b3c] text-[#b0b3b8]'
+                }`}>
+                  {isAdmin ? <Unlock className="w-2.5 h-2.5" /> : <Lock className="w-2.5 h-2.5" />}
+                </span>
               </div>
-              <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#31a24c] border-2 border-[#242526]" />
             </button>
           </div>
         </div>

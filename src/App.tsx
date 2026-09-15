@@ -7,11 +7,9 @@ import { ProfileView } from './components/ProfileView';
 import { StudyView } from './components/StudyView';
 import { GamingView } from './components/GamingView';
 import { MediaView } from './components/MediaView';
-import { VaultView } from './components/VaultView';
 import { FloatingPlayer } from './components/FloatingPlayer';
 import { CommandPalette } from './components/CommandPalette';
 import { AdminAuthModal } from './components/AdminAuthModal';
-import { HabitTracker } from './components/HabitTracker';
 import { Heart, Sparkles } from 'lucide-react';
 import { GithubIcon } from './components/Icons';
 
@@ -32,22 +30,13 @@ const MainApp: React.FC = () => {
 
       {/* Main Content Area */}
       <main className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-8 flex-1 pb-24 md:pb-12 space-y-6">
-        {activeTab === 'overview' && (
-          <>
-            <ProfileView />
-            <HabitTracker />
-          </>
-        )}
+        {activeTab === 'overview' && <ProfileView onNavigateTab={setActiveTab} />}
 
         {activeTab === 'study' && <StudyView />}
 
         {activeTab === 'gaming' && <GamingView />}
 
         {activeTab === 'media' && <MediaView />}
-
-        {activeTab === 'vault' && (
-          <VaultView onOpenAuthModal={() => setIsAuthModalOpen(true)} />
-        )}
       </main>
 
       {/* Footer */}
@@ -60,7 +49,7 @@ const MainApp: React.FC = () => {
           </div>
           <div className="flex items-center gap-1">
             <span>Xây dựng với tâm huyết cho</span>
-            <strong className="text-[#e4e6eb]">namtacozz</strong>
+            <strong className="text-[#e4e6eb]">Hột Vịt Lộn</strong>
           </div>
           <div className="flex items-center gap-3">
             <a

@@ -25,15 +25,31 @@ interface DataContextType {
 
 const DataContext = createContext<DataContextType | undefined>(undefined);
 
-const LOCAL_STORAGE_KEY = 'vitao_app_data_v1';
+const LOCAL_STORAGE_KEY = 'vitao_app_data_v2';
 
 export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { repoConfig, masterKey } = useAuth();
   const [data, setData] = useState<AppData>(() => {
-    const cached = localStorage.getItem(LOCAL_STORAGE_KEY);
+    // Check v2 key or migrate from v1 key
+    const cached = localStorage.getItem(LOCAL_STORAGE_KEY) || localStorage.getItem('vitao_app_data_v1');
     if (cached) {
       try {
-        return JSON.parse(cached);
+        const parsed = JSON.parse(cached);
+        // Ensure new avatar and name take precedence over legacy defaults
+        if (!parsed.profile || parsed.profile.avatarUrl?.includes('unsplash.com') || parsed.profile.name === 'Namtacozz') {
+          parsed.profile = {
+            ...parsed.profile,
+            name: 'Hột Vịt Lộn',
+            avatarUrl: INITIAL_APP_DATA.profile.avatarUrl
+          };
+        }
+        if (!parsed.media?.playlists) {
+          parsed.media = {
+            ...parsed.media,
+            playlists: INITIAL_APP_DATA.media.playlists
+          };
+        }
+        return parsed;
       } catch (e) {
         console.error('Failed to parse cached data', e);
       }
