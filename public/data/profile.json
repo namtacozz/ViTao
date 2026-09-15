@@ -1,0 +1,63 @@
+{
+  "name": "Namtacozz",
+  "handle": "@namtacozz",
+  "title": "Fullstack Developer & TFT Tactician",
+  "bio": "Đam mê xây dựng web hiện đại, khám phá công nghệ mới, leo rank TFT và tạo ra những công cụ hữu ích cho bản thân. \"Tất cả là vì tao\" ⚡",
+  "avatarUrl": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=400&q=80",
+  "coverUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+  "status": {
+    "text": "Đang mài giũa ViTao Hub & leo rank Thách Đấu",
+    "emoji": "⚡",
+    "activity": "coding"
+  },
+  "location": "Việt Nam",
+  "email": "namtacozz@gmail.com",
+  "socials": {
+    "github": "https://github.com/namtacozz",
+    "facebook": "https://facebook.com",
+    "discord": "namtacozz#0001",
+    "youtube": "https://youtube.com",
+    "steam": "https://steamcommunity.com"
+  },
+  "skills": [
+    {
+      "name": "Frontend & UI/UX",
+      "skills": ["React", "TypeScript", "Tailwind CSS", "Next.js", "GSAP", "Vite"]
+    },
+    {
+      "name": "Backend & Cloud",
+      "skills": ["Node.js", "Python", "FastAPI", "PostgreSQL", "Docker", "GitHub Actions"]
+    },
+    {
+      "name": "Gaming & Strategy",
+      "skills": ["Teamfight Tactics (Challenger Mindset)", "League of Legends (Mid/Top)", "Meta Theorycrafting"]
+    }
+  ],
+  "showcaseProjects": [
+    {
+      "id": "vitao",
+      "title": "ViTao — Personal Universe OS",
+      "description": "Trung tâm điều hành và quản lý cá nhân all-in-one: Quản lý học tập, TFT Meta live, YouTube PiP Player và Profile Showcase.",
+      "tags": ["React", "TypeScript", "Tailwind CSS", "GitHub API", "GSAP"],
+      "demoUrl": "https://namtacozz.github.io/ViTao/",
+      "githubUrl": "https://github.com/namtacozz/ViTao",
+      "stars": 12,
+      "highlight": true
+    },
+    {
+      "id": "tft-tactics-helper",
+      "title": "TFT Auto Comps Scout",
+      "description": "Công cụ phân tích và gợi ý trang bị chuẩn (BIS), lõi công nghệ và đội hình meta DTCL theo thời gian thực.",
+      "tags": ["TypeScript", "TFT API", "Algorithm"],
+      "githubUrl": "https://github.com/namtacozz",
+      "stars": 8,
+      "highlight": true
+    }
+  ],
+  "highlights": [
+    { "label": "CPA Tích Lũy", "value": "3.62 / 4.0", "subtext": "Xếp loại Xuất sắc" },
+    { "label": "TFT Mùa Hiện Tại", "value": "Cao Thủ (Master)", "subtext": "Top 4 Rate: 58.4%" },
+    { "label": "GitHub Repos", "value": "24+", "subtext": "Projects & Tools" },
+    { "label": "Năng suất", "value": "1,420+ giờ", "subtext": "Code & Học tập" }
+  ]
+}
