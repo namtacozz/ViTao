@@ -100,5 +100,79 @@
       "icon": "Bot",
       "category": "AI"
     }
+  ],
+  "playlists": [
+    {
+      "id": "pl-fav",
+      "name": "Bài Hát Yêu Thích",
+      "description": "Tập hợp các bài nhạc ruột nghe hàng ngày",
+      "createdAt": "2026-09-15",
+      "tracks": [
+        {
+          "id": "tr-1",
+          "title": "Lofi Hip Hop Radio - Beats to Relax/Study to",
+          "artist": "Lofi Girl",
+          "youtubeId": "jfKfPfyJRdk",
+          "duration": "LIVE",
+          "thumbnail": "https://i.ytimg.com/vi/jfKfPfyJRdk/hqdefault.jpg"
+        },
+        {
+          "id": "tr-3",
+          "title": "Awaken (ft. Valerie Broussard) | League of Legends",
+          "artist": "Riot Games Music",
+          "youtubeId": "zF5Ddo9JDPY",
+          "duration": "3:20",
+          "thumbnail": "https://i.ytimg.com/vi/zF5Ddo9JDPY/hqdefault.jpg"
+        }
+      ]
+    },
+    {
+      "id": "pl-lofi",
+      "name": "Lofi Chill & Code",
+      "description": "Giai điệu thư giãn tập trung viết code và học tập",
+      "createdAt": "2026-09-15",
+      "tracks": [
+        {
+          "id": "tr-1",
+          "title": "Lofi Hip Hop Radio - Beats to Relax/Study to",
+          "artist": "Lofi Girl",
+          "youtubeId": "jfKfPfyJRdk",
+          "duration": "LIVE",
+          "thumbnail": "https://i.ytimg.com/vi/jfKfPfyJRdk/hqdefault.jpg"
+        },
+        {
+          "id": "tr-2",
+          "title": "Synthwave Radio - Chill synth / Retro beats",
+          "artist": "Lofi Girl Synthwave",
+          "youtubeId": "4xDzrJKXOOY",
+          "duration": "LIVE",
+          "thumbnail": "https://i.ytimg.com/vi/4xDzrJKXOOY/hqdefault.jpg"
+        }
+      ]
+    },
+    {
+      "id": "pl-gaming",
+      "name": "Gaming Hype & TFT",
+      "description": "Nhạc bốc lửa leo rank Thách Đấu và clutch combat",
+      "createdAt": "2026-09-15",
+      "tracks": [
+        {
+          "id": "tr-3",
+          "title": "Awaken (ft. Valerie Broussard) | League of Legends Cinematic",
+          "artist": "Riot Games Music",
+          "youtubeId": "zF5Ddo9JDPY",
+          "duration": "3:20",
+          "thumbnail": "https://i.ytimg.com/vi/zF5Ddo9JDPY/hqdefault.jpg"
+        },
+        {
+          "id": "tr-4",
+          "title": "Legends Never Die | Worlds 2017 Theme Song",
+          "artist": "Against The Current",
+          "youtubeId": "r6zIGXunKCg",
+          "duration": "3:55",
+          "thumbnail": "https://i.ytimg.com/vi/r6zIGXunKCg/hqdefault.jpg"
+        }
+      ]
+    }
   ]
 }
