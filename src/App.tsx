@@ -21,7 +21,7 @@ const MainApp: React.FC = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#07090e] text-slate-100 flex flex-col justify-between selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div className="min-h-screen bg-[#18191a] text-[#e4e6eb] flex flex-col justify-between selection:bg-[#1877f2]/30 selection:text-white">
       {/* Top Navbar */}
       <Navbar
         activeTab={activeTab}
@@ -51,23 +51,23 @@ const MainApp: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="w-full border-t border-slate-900 py-6 text-center text-xs text-slate-500 hidden md:block">
+      <footer className="w-full border-t border-[#393a3b] bg-[#242526] py-5 text-center text-xs text-[#b0b3b8] hidden md:block">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center gap-1.5 font-mono text-[11px]">
             <span>ViTao Universe OS</span>
             <span>•</span>
-            <span className="text-cyan-400">Tất cả là vì tao ⚡</span>
+            <span className="text-[#1877f2] font-semibold">Tất cả là vì tao ⚡</span>
           </div>
           <div className="flex items-center gap-1">
             <span>Xây dựng với tâm huyết cho</span>
-            <strong className="text-slate-300">namtacozz</strong>
+            <strong className="text-[#e4e6eb]">namtacozz</strong>
           </div>
           <div className="flex items-center gap-3">
             <a
               href="https://github.com/namtacozz/ViTao"
               target="_blank"
               rel="noreferrer"
-              className="text-slate-400 hover:text-white flex items-center gap-1 transition-colors"
+              className="text-[#b0b3b8] hover:text-white flex items-center gap-1 transition-colors"
             >
               <GithubIcon className="w-3.5 h-3.5" />
               <span>GitHub Repo</span>

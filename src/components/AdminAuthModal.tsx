@@ -54,26 +54,26 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({ isOpen, onClose 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md">
-      <div className="relative w-full max-w-lg glass-panel rounded-2xl border border-slate-700/80 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+      <div className="relative w-full max-w-lg bg-[#242526] rounded-2xl border border-[#393a3b] shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-900/60">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-[#393a3b] bg-[#242526]">
           <div className="flex items-center gap-2.5">
-            <div className={`p-2 rounded-lg ${isAdmin ? 'bg-cyan-500/20 text-cyan-400' : 'bg-slate-800 text-slate-400'}`}>
+            <div className={`p-2 rounded-full ${isAdmin ? 'bg-[#1877f2]/15 text-[#1877f2]' : 'bg-[#3a3b3c] text-[#b0b3b8]'}`}>
               {isAdmin ? <Unlock className="w-5 h-5" /> : <Lock className="w-5 h-5" />}
             </div>
             <div>
-              <h3 className="font-bold text-white text-base">
+              <h3 className="font-bold text-[#e4e6eb] text-base">
                 {isAdmin ? 'Quản Trị ViTao — Thiết Lập Chủ Nhân' : 'Mở Khóa Quyền Chủ Nhân (Admin)'}
               </h3>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-[#b0b3b8]">
                 {isAdmin ? 'Tùy chỉnh GitHub Sync, Token và bảo mật' : 'Nhập mật mã để chỉnh sửa dữ liệu cá nhân'}
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/80 transition-colors"
+            className="p-2 rounded-full text-[#b0b3b8] hover:text-white hover:bg-[#3a3b3c] transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -85,7 +85,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({ isOpen, onClose 
             /* Login Form */
             <form onSubmit={handleLogin} className="space-y-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                <label className="block text-xs font-semibold text-[#e4e6eb] mb-1.5">
                   Mã PIN / Mật khẩu Chủ nhân
                 </label>
                 <div className="relative">
@@ -94,19 +94,19 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({ isOpen, onClose 
                     value={passwordInput}
                     onChange={(e) => setPasswordInput(e.target.value)}
                     placeholder="Nhập mật mã (Mặc định: 0357267987)"
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
+                    className="w-full px-4 py-2.5 rounded-lg bg-[#3a3b3c] border border-[#393a3b] text-[#e4e6eb] placeholder-[#b0b3b8] text-sm focus:outline-none focus:ring-2 focus:ring-[#1877f2]"
                     autoFocus
                   />
-                  <Key className="w-4 h-4 absolute right-3.5 top-3 text-slate-500" />
+                  <Key className="w-4 h-4 absolute right-3.5 top-3 text-[#b0b3b8]" />
                 </div>
                 {loginError && (
-                  <p className="mt-2 text-xs text-rose-400 flex items-center gap-1">
+                  <p className="mt-2 text-xs text-[#e41e3f] flex items-center gap-1 font-medium">
                     <AlertCircle className="w-3.5 h-3.5" />
                     {loginError}
                   </p>
                 )}
-                <p className="mt-2 text-[11px] text-slate-400">
-                  💡 Mẹo: Nhập <code className="text-cyan-400 bg-slate-800 px-1 py-0.5 rounded">0357267987</code> để mở khóa quyền chủ nhân.
+                <p className="mt-2 text-[11px] text-[#b0b3b8]">
+                  💡 Mẹo: Nhập <code className="text-[#1877f2] font-mono bg-[#3a3b3c] px-1.5 py-0.5 rounded">0357267987</code> để mở khóa quyền chủ nhân.
                 </p>
               </div>
 
@@ -114,13 +114,13 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({ isOpen, onClose 
                 <button
                   type="button"
                   onClick={onClose}
-                  className="px-4 py-2 rounded-xl text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                  className="px-4 py-2 rounded-lg text-xs font-semibold text-[#b0b3b8] hover:bg-[#3a3b3c] hover:text-[#e4e6eb] transition-colors"
                 >
                   Đóng
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-neon-cyan transition-all"
+                  className="px-5 py-2 rounded-lg text-xs font-semibold bg-[#1877f2] hover:bg-[#166fe5] text-white shadow-sm transition-all"
                 >
                   Xác Thực & Mở Khóa
                 </button>
@@ -128,14 +128,14 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({ isOpen, onClose 
             </form>
           ) : (
             /* Admin Settings */
-            <div className="space-y-6">
+            <div className="space-y-5">
               {/* GitHub Token Setup */}
-              <div className="p-4 rounded-xl bg-slate-900/50 border border-slate-800/90 space-y-3">
-                <div className="flex items-center gap-2 text-cyan-400 text-sm font-semibold">
+              <div className="p-4 rounded-xl bg-[#18191a] border border-[#393a3b] space-y-3">
+                <div className="flex items-center gap-2 text-[#1877f2] text-sm font-semibold">
                   <GithubIcon className="w-4 h-4" />
                   <span>GitHub Personal Access Token (PAT)</span>
                 </div>
-                <p className="text-xs text-slate-400 leading-relaxed">
+                <p className="text-xs text-[#b0b3b8] leading-relaxed">
                   Token này cho phép ViTao commit trực tiếp các thay đổi về branch repository của bạn.
                   Token được lưu trữ hoàn toàn trong trình duyệt cục bộ (Local Storage).
                 </p>
@@ -145,14 +145,14 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({ isOpen, onClose 
                     value={patInput}
                     onChange={(e) => setPatInput(e.target.value)}
                     placeholder="ghp_xxxxxxxxxxxxxxxxxxxx (Quyền repo hoặc contents:write)"
-                    className="w-full px-3.5 py-2 rounded-lg bg-slate-950 border border-slate-700 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500"
+                    className="w-full px-3.5 py-2 rounded-lg bg-[#3a3b3c] border border-[#393a3b] text-xs text-[#e4e6eb] placeholder-[#b0b3b8] focus:outline-none focus:ring-2 focus:ring-[#1877f2]"
                   />
                   <div className="flex items-center justify-between">
                     <a
                       href="https://github.com/settings/tokens/new?scopes=repo&description=ViTao%20Hub%20Sync"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-[11px] text-cyan-400 hover:underline flex items-center gap-1"
+                      className="text-[11px] text-[#1877f2] hover:underline flex items-center gap-1 font-semibold"
                     >
                       Tạo GitHub Token mới trên GitHub ↗
                     </a>
@@ -160,14 +160,14 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({ isOpen, onClose 
                       type="button"
                       onClick={handleSaveToken}
                       disabled={tokenStatus.testing}
-                      className="px-3 py-1.5 rounded-lg text-xs font-medium bg-cyan-600 hover:bg-cyan-500 text-white transition-colors disabled:opacity-50"
+                      className="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-[#1877f2] hover:bg-[#166fe5] text-white transition-colors disabled:opacity-50"
                     >
                       {tokenStatus.testing ? 'Đang kiểm tra...' : 'Lưu & Kiểm tra Token'}
                     </button>
                   </div>
                   {tokenStatus.message && (
-                    <div className={`p-2.5 rounded-lg text-xs flex items-center gap-2 ${tokenStatus.success ? 'bg-emerald-950/60 text-emerald-300 border border-emerald-800/60' : 'bg-rose-950/60 text-rose-300 border border-rose-800/60'}`}>
-                      {tokenStatus.success ? <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" /> : <AlertCircle className="w-4 h-4 text-rose-400 shrink-0" />}
+                    <div className={`p-2.5 rounded-lg text-xs flex items-center gap-2 ${tokenStatus.success ? 'bg-[#31a24c]/15 text-[#31a24c] border border-[#31a24c]/30' : 'bg-[#e41e3f]/15 text-[#e41e3f] border border-[#e41e3f]/30'}`}>
+                      {tokenStatus.success ? <CheckCircle2 className="w-4 h-4 text-[#31a24c] shrink-0" /> : <AlertCircle className="w-4 h-4 text-[#e41e3f] shrink-0" />}
                       <span>{tokenStatus.message}</span>
                     </div>
                   )}
@@ -175,36 +175,36 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({ isOpen, onClose 
               </div>
 
               {/* Repo & Branch Target */}
-              <div className="p-4 rounded-xl bg-slate-900/50 border border-slate-800/90 space-y-3">
-                <div className="text-sm font-semibold text-slate-200">
+              <div className="p-4 rounded-xl bg-[#18191a] border border-[#393a3b] space-y-3">
+                <div className="text-sm font-semibold text-[#e4e6eb]">
                   Cấu hình Kho Lưu Trữ (Repository Target)
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
                   <div>
-                    <label className="block text-slate-400 mb-1">Chủ sở hữu (Owner)</label>
+                    <label className="block text-[#b0b3b8] mb-1 font-semibold">Chủ sở hữu (Owner)</label>
                     <input
                       type="text"
                       value={ownerInput}
                       onChange={(e) => setOwnerInput(e.target.value)}
-                      className="w-full px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white"
+                      className="w-full px-3 py-1.5 rounded-lg bg-[#3a3b3c] border border-[#393a3b] text-[#e4e6eb] focus:outline-none focus:ring-2 focus:ring-[#1877f2]"
                     />
                   </div>
                   <div>
-                    <label className="block text-slate-400 mb-1">Tên Repo</label>
+                    <label className="block text-[#b0b3b8] mb-1 font-semibold">Tên Repo</label>
                     <input
                       type="text"
                       value={repoInput}
                       onChange={(e) => setRepoInput(e.target.value)}
-                      className="w-full px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white"
+                      className="w-full px-3 py-1.5 rounded-lg bg-[#3a3b3c] border border-[#393a3b] text-[#e4e6eb] focus:outline-none focus:ring-2 focus:ring-[#1877f2]"
                     />
                   </div>
                   <div>
-                    <label className="block text-slate-400 mb-1">Branch</label>
+                    <label className="block text-[#b0b3b8] mb-1 font-semibold">Branch</label>
                     <input
                       type="text"
                       value={branchInput}
                       onChange={(e) => setBranchInput(e.target.value)}
-                      className="w-full px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white"
+                      className="w-full px-3 py-1.5 rounded-lg bg-[#3a3b3c] border border-[#393a3b] text-[#e4e6eb] focus:outline-none focus:ring-2 focus:ring-[#1877f2]"
                     />
                   </div>
                 </div>
@@ -212,7 +212,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({ isOpen, onClose 
                   <button
                     type="button"
                     onClick={handleSaveRepoSettings}
-                    className="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200"
+                    className="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-[#3a3b3c] hover:bg-[#4e4f50] text-[#e4e6eb] transition-colors"
                   >
                     Lưu cấu hình Repo
                   </button>
@@ -220,12 +220,12 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({ isOpen, onClose 
               </div>
 
               {/* Data Tools: Backup & Reset */}
-              <div className="flex items-center justify-between pt-2 border-t border-slate-800">
+              <div className="flex items-center justify-between pt-2 border-t border-[#393a3b]">
                 <div className="flex gap-2">
                   <button
                     type="button"
                     onClick={exportBackup}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-300 hover:text-white text-xs"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#3a3b3c] hover:bg-[#4e4f50] text-[#e4e6eb] text-xs font-semibold transition-colors"
                   >
                     <Download className="w-3.5 h-3.5" />
                     Tải file Backup JSON
@@ -233,7 +233,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({ isOpen, onClose 
                   <button
                     type="button"
                     onClick={resetToDefault}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-rose-400 hover:bg-rose-950/40 text-xs"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#3a3b3c] hover:bg-[#e41e3f]/20 text-[#e41e3f] text-xs font-semibold transition-colors"
                   >
                     <RotateCcw className="w-3.5 h-3.5" />
                     Reset mặc định
@@ -245,7 +245,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({ isOpen, onClose 
                     lockAdmin();
                     onClose();
                   }}
-                  className="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-rose-600/80 hover:bg-rose-600 text-white transition-colors"
+                  className="px-4 py-1.5 rounded-lg text-xs font-semibold bg-[#e41e3f] hover:bg-[#d01737] text-white transition-colors"
                 >
                   Khóa Quản Trị
                 </button>

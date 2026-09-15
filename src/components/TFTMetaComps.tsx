@@ -73,18 +73,18 @@ export const TFTMetaComps: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Header bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-2xl glass-card border border-purple-500/20">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-xl bg-[#242526] border border-[#393a3b] shadow-sm">
         <div>
-          <div className="flex items-center gap-2 text-purple-400 text-xs font-mono tracking-wider uppercase">
-            <Crown className="w-4 h-4" />
+          <div className="flex items-center gap-2 text-[#1877f2] text-xs font-semibold tracking-wider uppercase">
+            <Crown className="w-4 h-4 text-[#f7b125]" />
             <span>TFT Live Meta Tracker</span>
           </div>
-          <h2 className="text-xl sm:text-2xl font-black text-white mt-1 flex items-center gap-2">
+          <h2 className="text-xl sm:text-2xl font-black text-[#e4e6eb] mt-1 flex items-center gap-2">
             Đội Hình Chuẩn Meta ĐTCL (MetaTFT.com)
           </h2>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-[#b0b3b8] mt-1">
             Dữ liệu thống kê thứ hạng trung bình, tỉ lệ Top 4, đồ chuẩn (BIS) và vị trí cờ theo thời gian thực.
           </p>
         </div>
@@ -94,7 +94,7 @@ export const TFTMetaComps: React.FC = () => {
             href="https://www.metatft.com/comps"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-900/80 border border-slate-700/80 text-slate-300 hover:text-white text-xs font-medium transition-all"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#3a3b3c] hover:bg-[#4e4f50] text-[#e4e6eb] text-xs font-semibold transition-all"
           >
             <span>Mở MetaTFT</span>
             <ExternalLink className="w-3.5 h-3.5" />
@@ -103,7 +103,7 @@ export const TFTMetaComps: React.FC = () => {
           <button
             onClick={loadComps}
             disabled={loading}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-semibold shadow-neon-purple transition-all disabled:opacity-50"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#1877f2] hover:bg-[#166fe5] text-white text-xs font-semibold shadow-sm transition-all disabled:opacity-50"
           >
             <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
             <span>{loading ? 'Đang tải...' : 'Làm mới Meta'}</span>
@@ -114,19 +114,15 @@ export const TFTMetaComps: React.FC = () => {
       {/* Filter and Search Bar */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
         {/* Tier filter buttons */}
-        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-slate-900/80 border border-slate-800 w-full sm:w-auto">
+        <div className="flex items-center gap-1 p-1 rounded-xl bg-[#242526] border border-[#393a3b] w-full sm:w-auto">
           {(['ALL', 'S', 'A', 'B'] as const).map(tier => (
             <button
               key={tier}
               onClick={() => setSelectedTier(tier)}
-              className={`flex-1 sm:flex-none px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
+              className={`flex-1 sm:flex-none px-4 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                 selectedTier === tier
-                  ? tier === 'S'
-                    ? 'bg-amber-500 text-slate-950 shadow-sm'
-                    : tier === 'A'
-                    ? 'bg-purple-600 text-white shadow-sm'
-                    : 'bg-cyan-500 text-slate-950 shadow-sm'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                  ? 'bg-[#1877f2] text-white shadow-sm'
+                  : 'text-[#b0b3b8] hover:text-[#e4e6eb] hover:bg-[#3a3b3c]'
               }`}
             >
               {tier === 'ALL' ? 'Tất cả' : `Tier ${tier}`}
@@ -141,9 +137,9 @@ export const TFTMetaComps: React.FC = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Tìm theo tên tướng, bài đánh..."
-            className="w-full pl-9 pr-4 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-purple-500"
+            className="w-full pl-9 pr-4 py-2 rounded-full bg-[#3a3b3c] border border-[#393a3b] text-xs text-[#e4e6eb] placeholder-[#b0b3b8] focus:outline-none focus:ring-2 focus:ring-[#1877f2]"
           />
-          <Search className="w-4 h-4 text-slate-500 absolute left-3 top-2.5" />
+          <Search className="w-4 h-4 text-[#b0b3b8] absolute left-3 top-2.5" />
         </div>
       </div>
 
@@ -155,29 +151,29 @@ export const TFTMetaComps: React.FC = () => {
           return (
             <div
               key={comp.id}
-              className="glass-card rounded-2xl p-5 space-y-4 hover:border-purple-500/40 transition-all duration-200 group"
+              className="bg-[#242526] rounded-xl p-5 border border-[#393a3b] shadow-sm space-y-4 hover:border-[#1877f2]/50 transition-all group"
             >
               {/* Header Card */}
               <div className="flex items-start justify-between gap-2">
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
                     <span
-                      className={`px-2 py-0.5 rounded-md text-[11px] font-black tracking-wider uppercase border ${
+                      className={`px-2 py-0.5 rounded-md text-[11px] font-bold tracking-wider uppercase ${
                         comp.tier === 'S'
-                          ? 'bg-amber-500/20 text-amber-300 border-amber-500/40 shadow-sm'
+                          ? 'bg-[#f7b125]/20 text-[#f7b125]'
                           : comp.tier === 'A'
-                          ? 'bg-purple-500/20 text-purple-300 border-purple-500/40'
-                          : 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40'
+                          ? 'bg-[#1877f2]/20 text-[#1877f2]'
+                          : 'bg-[#31a24c]/20 text-[#31a24c]'
                       }`}
                     >
                       Tier {comp.tier}
                     </span>
-                    <span className="text-[11px] text-slate-400 font-mono">
-                      Top 4: <strong className="text-emerald-400">{comp.top4Rate || '60%'}</strong> • Hạng TB:{' '}
-                      <strong className="text-cyan-400">{comp.avgPlace || '3.9'}</strong>
+                    <span className="text-[11px] text-[#b0b3b8] font-mono">
+                      Top 4: <strong className="text-[#31a24c]">{comp.top4Rate || '60%'}</strong> • Hạng TB:{' '}
+                      <strong className="text-[#1877f2]">{comp.avgPlace || '3.9'}</strong>
                     </span>
                   </div>
-                  <h3 className="text-base font-bold text-white group-hover:text-purple-300 transition-colors">
+                  <h3 className="text-base font-bold text-[#e4e6eb] group-hover:text-[#1877f2] transition-colors">
                     {comp.name}
                   </h3>
                 </div>
@@ -186,13 +182,13 @@ export const TFTMetaComps: React.FC = () => {
                 <button
                   onClick={() => handleSaveComp(comp)}
                   title={isCompSaved ? 'Đã lưu vào danh sách tủ' : 'Lưu bài này vào danh sách tủ'}
-                  className={`p-2 rounded-xl border text-xs flex items-center gap-1 transition-all ${
+                  className={`p-2 rounded-full border text-xs flex items-center justify-center transition-all ${
                     isCompSaved
-                      ? 'bg-emerald-950/60 border-emerald-500/40 text-emerald-400'
-                      : 'bg-slate-900/80 border-slate-800 text-slate-400 hover:text-white hover:border-purple-500/40'
+                      ? 'bg-[#31a24c]/20 border-[#31a24c]/40 text-[#31a24c]'
+                      : 'bg-[#3a3b3c] border-transparent text-[#b0b3b8] hover:text-white hover:bg-[#4e4f50]'
                   }`}
                 >
-                  {isCompSaved ? <Check className="w-4 h-4" /> : <BookmarkPlus className="w-4 h-4" />}
+                  {isCompSaved ? <Check className="w-4 h-4 stroke-[3]" /> : <BookmarkPlus className="w-4 h-4" />}
                 </button>
               </div>
 
@@ -201,29 +197,29 @@ export const TFTMetaComps: React.FC = () => {
                 {comp.traits.map((trait, idx) => (
                   <span
                     key={idx}
-                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-slate-900/90 border border-slate-800 text-[11px] font-medium text-slate-300"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#3a3b3c] border border-[#393a3b] text-[11px] font-medium text-[#e4e6eb]"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#1877f2]"></span>
                     <span>{trait.name}</span>
-                    <strong className="text-cyan-400 ml-0.5">{trait.count}</strong>
+                    <strong className="text-[#1877f2] ml-0.5">{trait.count}</strong>
                   </span>
                 ))}
               </div>
 
               {/* Core Units & BIS Items */}
               <div className="space-y-2">
-                <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
+                <div className="text-[11px] font-semibold text-[#b0b3b8] uppercase tracking-wider">
                   Tướng Cốt Lõi & Trang Bị Chuẩn (BIS):
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                   {comp.coreUnits.map((unit, idx) => (
                     <div
                       key={idx}
-                      className={`p-2 rounded-xl border ${getCostColor(unit.cost)} flex flex-col justify-between`}
+                      className="p-2.5 rounded-lg bg-[#18191a] border border-[#393a3b] flex flex-col justify-between"
                     >
                       <div className="flex items-center justify-between">
-                        <span className="font-bold text-xs truncate">{unit.name}</span>
-                        <span className="text-[10px] font-mono opacity-80">{unit.cost} vàng</span>
+                        <span className="font-bold text-xs text-[#e4e6eb] truncate">{unit.name}</span>
+                        <span className="text-[10px] font-mono text-[#b0b3b8]">{unit.cost} vàng</span>
                       </div>
 
                       {/* Items */}
@@ -232,14 +228,14 @@ export const TFTMetaComps: React.FC = () => {
                           {unit.items.map((item, i) => (
                             <span
                               key={i}
-                              className="text-[9px] px-1 py-0.5 rounded bg-slate-950/80 text-amber-200 border border-amber-500/30 truncate max-w-full"
+                              className="text-[9px] px-1.5 py-0.5 rounded bg-[#3a3b3c] text-[#f7b125] truncate max-w-full font-medium"
                             >
                               {item}
                             </span>
                           ))}
                         </div>
                       ) : (
-                        <span className="text-[9px] text-slate-500 italic mt-1">Đồ kích hệ</span>
+                        <span className="text-[9px] text-[#b0b3b8] italic mt-1">Đồ kích hệ</span>
                       )}
                     </div>
                   ))}
@@ -247,23 +243,23 @@ export const TFTMetaComps: React.FC = () => {
               </div>
 
               {/* Augments and Strategy Guide */}
-              <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 space-y-1.5 text-xs">
-                <div className="flex items-center gap-1.5 text-amber-400 font-semibold text-[11px]">
+              <div className="p-3 rounded-lg bg-[#18191a] border border-[#393a3b] space-y-1.5 text-xs">
+                <div className="flex items-center gap-1.5 text-[#f7b125] font-semibold text-[11px]">
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Lối chơi: {comp.playstyle}</span>
                 </div>
-                <div className="flex flex-wrap gap-1.5 mt-1">
+                <div className="flex flex-wrap gap-1 mt-1">
                   {comp.augments.map((aug, i) => (
                     <span
                       key={i}
-                      className="px-2 py-0.5 rounded bg-purple-950/40 text-purple-300 border border-purple-800/40 text-[10px]"
+                      className="px-2 py-0.5 rounded-md bg-[#3a3b3c] text-[#e4e6eb] text-[10px]"
                     >
                       {aug}
                     </span>
                   ))}
                 </div>
                 {comp.guide && (
-                  <p className="text-[11px] text-slate-400 leading-relaxed pt-1 border-t border-slate-900">
+                  <p className="text-[11px] text-[#b0b3b8] leading-relaxed pt-1.5 border-t border-[#393a3b]">
                     💡 {comp.guide}
                   </p>
                 )}

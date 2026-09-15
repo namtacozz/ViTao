@@ -65,20 +65,20 @@ export const VaultView: React.FC<VaultViewProps> = ({ onOpenAuthModal }) => {
   // If not logged in as Admin, lock the vault
   if (!isAdmin) {
     return (
-      <div className="flex flex-col items-center justify-center p-8 sm:p-16 rounded-3xl glass-panel border border-amber-500/20 text-center space-y-5 animate-in fade-in duration-200">
-        <div className="w-16 h-16 rounded-2xl bg-amber-950/60 border border-amber-500/40 flex items-center justify-center text-amber-400 shadow-neon-gold">
+      <div className="flex flex-col items-center justify-center p-8 sm:p-14 rounded-xl bg-[#242526] border border-[#393a3b] text-center space-y-5 shadow-sm">
+        <div className="w-16 h-16 rounded-full bg-[#3a3b3c] flex items-center justify-center text-[#1877f2]">
           <Lock className="w-8 h-8" />
         </div>
         <div className="space-y-1.5 max-w-md">
-          <h2 className="text-xl font-bold text-white">Két Sắt Riêng Tư Được Mã Hóa</h2>
-          <p className="text-xs text-slate-400 leading-relaxed">
+          <h2 className="text-xl font-bold text-[#e4e6eb]">Két Sắt Riêng Tư Được Mã Hóa</h2>
+          <p className="text-xs text-[#b0b3b8] leading-relaxed">
             Khu vực này chứa các ghi chú tuyệt mật, nhật ký cá nhân và thông tin nhạy cảm. Dữ liệu được bảo vệ bằng mã hóa chuẩn <strong>AES-256-GCM</strong> (Zero-Knowledge).
           </p>
         </div>
 
         <button
           onClick={onOpenAuthModal}
-          className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 text-xs font-bold shadow-md transition-transform hover:scale-105"
+          className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#1877f2] hover:bg-[#166fe5] text-white text-xs font-semibold shadow-sm transition-colors"
         >
           <Key className="w-4 h-4" />
           <span>Mở Khóa Bằng Mật Mã Chủ Nhân</span>
@@ -88,20 +88,20 @@ export const VaultView: React.FC<VaultViewProps> = ({ onOpenAuthModal }) => {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="glass-panel rounded-2xl p-6 border border-emerald-500/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div className="space-y-4">
+      <div className="bg-[#242526] rounded-xl p-5 border border-[#393a3b] shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <div className="p-2.5 rounded-xl bg-emerald-950/80 border border-emerald-500/40 text-emerald-400">
+          <div className="p-2.5 rounded-full bg-[#31a24c]/20 text-[#31a24c]">
             <ShieldCheck className="w-6 h-6" />
           </div>
           <div>
-            <h2 className="text-lg font-bold text-white flex items-center gap-2">
+            <h2 className="text-lg font-bold text-[#e4e6eb] flex items-center gap-2">
               <span>Két Sắt Bảo Mật — Đã Mở Khóa</span>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800/60">
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#31a24c]/15 text-[#31a24c] border border-[#31a24c]/30">
                 AES-256
               </span>
             </h2>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-[#b0b3b8]">
               Dữ liệu được mã hóa client-side trước khi đẩy lên GitHub repository.
             </p>
           </div>
@@ -109,7 +109,7 @@ export const VaultView: React.FC<VaultViewProps> = ({ onOpenAuthModal }) => {
 
         <button
           onClick={() => setShowAddItem(true)}
-          className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold shadow-sm transition-all"
+          className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#1877f2] hover:bg-[#166fe5] text-white text-xs font-semibold shadow-sm transition-all"
         >
           <Plus className="w-3.5 h-3.5" />
           <span>Thêm Ghi Chú Mật</span>
@@ -121,42 +121,42 @@ export const VaultView: React.FC<VaultViewProps> = ({ onOpenAuthModal }) => {
         {vault.items.map((item) => (
           <div
             key={item.id}
-            className="glass-card rounded-2xl p-5 border border-slate-800 hover:border-emerald-500/30 transition-all space-y-3 flex flex-col justify-between"
+            className="bg-[#242526] rounded-xl p-5 border border-[#393a3b] shadow-sm hover:border-[#1877f2]/40 transition-all space-y-3 flex flex-col justify-between"
           >
             <div className="space-y-2">
               <div className="flex items-start justify-between gap-2">
                 <div className="flex items-center gap-2">
                   {item.category === 'credential' ? (
-                    <KeyRound className="w-4 h-4 text-amber-400 shrink-0" />
+                    <KeyRound className="w-4 h-4 text-[#f7b125] shrink-0" />
                   ) : (
-                    <FileText className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <FileText className="w-4 h-4 text-[#1877f2] shrink-0" />
                   )}
-                  <h3 className="font-bold text-sm text-white">{item.title}</h3>
+                  <h3 className="font-bold text-sm text-[#e4e6eb]">{item.title}</h3>
                 </div>
-                <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400 border border-slate-800">
+                <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-[#3a3b3c] text-[#b0b3b8]">
                   {item.category}
                 </span>
               </div>
 
-              <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-900 font-mono text-xs text-slate-300 whitespace-pre-wrap break-words leading-relaxed select-all">
+              <div className="p-3 rounded-lg bg-[#18191a] border border-[#393a3b] font-mono text-xs text-[#e4e6eb] whitespace-pre-wrap break-words leading-relaxed select-all">
                 {item.content}
               </div>
             </div>
 
-            <div className="flex items-center justify-between pt-2 border-t border-slate-800/80 text-xs">
-              <span className="text-[10px] text-slate-500 font-mono">
+            <div className="flex items-center justify-between pt-2.5 border-t border-[#393a3b] text-xs">
+              <span className="text-[10px] text-[#b0b3b8] font-mono">
                 Cập nhật: {item.updatedAt}
               </span>
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-1.5">
                 <button
                   onClick={() => handleCopy(item.content, item.id)}
                   title="Sao chép nội dung"
-                  className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white transition-colors text-[11px]"
+                  className="flex items-center gap-1 px-3 py-1 rounded-md bg-[#3a3b3c] hover:bg-[#4e4f50] text-[#e4e6eb] transition-colors text-[11px] font-semibold"
                 >
                   {copiedId === item.id ? (
                     <>
-                      <Check className="w-3.5 h-3.5 text-emerald-400" />
-                      <span className="text-emerald-400">Đã chép</span>
+                      <Check className="w-3.5 h-3.5 text-[#31a24c] stroke-[3]" />
+                      <span className="text-[#31a24c]">Đã chép</span>
                     </>
                   ) : (
                     <>
@@ -167,7 +167,7 @@ export const VaultView: React.FC<VaultViewProps> = ({ onOpenAuthModal }) => {
                 </button>
                 <button
                   onClick={() => handleDeleteItem(item.id)}
-                  className="p-1.5 rounded-lg text-slate-500 hover:text-rose-400"
+                  className="p-1.5 rounded-full text-[#b0b3b8] hover:text-[#e41e3f] hover:bg-[#3a3b3c] transition-colors"
                   title="Xóa mục này"
                 >
                   <Trash2 className="w-3.5 h-3.5" />
@@ -180,27 +180,27 @@ export const VaultView: React.FC<VaultViewProps> = ({ onOpenAuthModal }) => {
 
       {/* Add Secret Modal */}
       {showAddItem && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
-          <form onSubmit={handleAddItemSubmit} className="glass-panel p-6 rounded-2xl max-w-md w-full border border-slate-700 space-y-4">
-            <h4 className="font-bold text-white text-sm">Thêm Ghi Chú Mật / Thông Tin Nhạy Cảm</h4>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          <form onSubmit={handleAddItemSubmit} className="bg-[#242526] p-6 rounded-xl max-w-md w-full border border-[#393a3b] shadow-2xl space-y-4">
+            <h4 className="font-bold text-[#e4e6eb] text-base">Thêm Ghi Chú Mật / Thông Tin Nhạy Cảm</h4>
             <div className="space-y-3 text-xs">
               <div>
-                <label className="block text-slate-400 mb-1">Tiêu Đề</label>
+                <label className="block text-[#b0b3b8] mb-1 font-semibold">Tiêu Đề</label>
                 <input
                   type="text"
                   placeholder="Ví dụ: Kế hoạch bí mật hoặc API Key"
                   value={newItem.title}
                   onChange={(e) => setNewItem({ ...newItem, title: e.target.value })}
-                  className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white"
+                  className="w-full px-3 py-2 rounded-lg bg-[#3a3b3c] border border-[#393a3b] text-[#e4e6eb] placeholder-[#b0b3b8] focus:outline-none focus:ring-2 focus:ring-[#1877f2]"
                   required
                 />
               </div>
               <div>
-                <label className="block text-slate-400 mb-1">Phân Loại</label>
+                <label className="block text-[#b0b3b8] mb-1 font-semibold">Phân Loại</label>
                 <select
                   value={newItem.category}
                   onChange={(e) => setNewItem({ ...newItem, category: e.target.value as any })}
-                  className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white"
+                  className="w-full px-3 py-2 rounded-lg bg-[#3a3b3c] border border-[#393a3b] text-[#e4e6eb] focus:outline-none focus:ring-2 focus:ring-[#1877f2]"
                 >
                   <option value="journal">Nhật Ký / Ý Tưởng</option>
                   <option value="secret">Ghi Chú Mật</option>
@@ -208,13 +208,13 @@ export const VaultView: React.FC<VaultViewProps> = ({ onOpenAuthModal }) => {
                 </select>
               </div>
               <div>
-                <label className="block text-slate-400 mb-1">Nội Dung</label>
+                <label className="block text-[#b0b3b8] mb-1 font-semibold">Nội Dung</label>
                 <textarea
                   rows={4}
                   placeholder="Nội dung sẽ được mã hóa AES-256 trước khi lưu..."
                   value={newItem.content}
                   onChange={(e) => setNewItem({ ...newItem, content: e.target.value })}
-                  className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white font-mono"
+                  className="w-full px-3 py-2 rounded-lg bg-[#3a3b3c] border border-[#393a3b] text-[#e4e6eb] placeholder-[#b0b3b8] font-mono focus:outline-none focus:ring-2 focus:ring-[#1877f2]"
                   required
                 />
               </div>
@@ -224,13 +224,13 @@ export const VaultView: React.FC<VaultViewProps> = ({ onOpenAuthModal }) => {
               <button
                 type="button"
                 onClick={() => setShowAddItem(false)}
-                className="px-4 py-2 rounded-xl text-xs text-slate-400 hover:text-white"
+                className="px-4 py-2 rounded-lg text-xs font-semibold text-[#b0b3b8] hover:bg-[#3a3b3c] hover:text-[#e4e6eb] transition-colors"
               >
                 Hủy
               </button>
               <button
                 type="submit"
-                className="px-4 py-2 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white"
+                className="px-4 py-2 rounded-lg text-xs font-semibold bg-[#1877f2] hover:bg-[#166fe5] text-white transition-colors"
               >
                 Lưu Mã Hóa
               </button>

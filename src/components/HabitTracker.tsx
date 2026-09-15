@@ -65,14 +65,14 @@ export const HabitTracker: React.FC = () => {
   };
 
   return (
-    <div className="glass-panel rounded-2xl p-5 border border-cyan-500/20 space-y-4">
+    <div className="bg-[#242526] rounded-xl p-5 border border-[#393a3b] shadow-sm space-y-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Flame className="w-5 h-5 text-amber-400" />
-          <h3 className="font-bold text-white text-base">Chuỗi Thói Quen Hàng Ngày (Habit Streaks)</h3>
+          <Flame className="w-5 h-5 text-[#f7b125]" />
+          <h3 className="font-bold text-[#e4e6eb] text-base">Chuỗi Thói Quen Hàng Ngày (Habit Streaks)</h3>
         </div>
-        <span className="text-xs font-mono text-cyan-400 bg-cyan-950/60 px-2.5 py-1 rounded-lg border border-cyan-800/60 flex items-center gap-1">
-          <Trophy className="w-3.5 h-3.5 text-amber-400" />
+        <span className="text-xs font-semibold text-[#1877f2] bg-[#1877f2]/10 px-3 py-1 rounded-full flex items-center gap-1.5 border border-[#1877f2]/20">
+          <Trophy className="w-3.5 h-3.5 text-[#f7b125]" />
           <span>Kỷ lục: 19 ngày liên tiếp</span>
         </span>
       </div>
@@ -84,43 +84,43 @@ export const HabitTracker: React.FC = () => {
             onClick={() => toggleHabit(habit.id)}
             className={`p-3.5 rounded-xl border cursor-pointer transition-all flex flex-col justify-between ${
               habit.completedToday
-                ? 'bg-emerald-950/40 border-emerald-500/50 shadow-sm'
-                : 'bg-slate-900/60 border-slate-800 hover:border-slate-700'
+                ? 'bg-[#1877f2]/10 border-[#1877f2]/40 shadow-sm'
+                : 'bg-[#18191a] border-[#393a3b] hover:bg-[#3a3b3c]/40'
             }`}
           >
             <div>
               <div className="flex items-start justify-between gap-1">
-                <span className="text-[10px] uppercase font-mono px-1.5 py-0.2 rounded bg-slate-900 text-slate-400">
+                <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-[#3a3b3c] text-[#b0b3b8]">
                   {habit.category}
                 </span>
-                <div className="flex items-center gap-1 text-xs font-bold text-amber-400 font-mono">
-                  <Flame className="w-3.5 h-3.5 fill-amber-400" />
+                <div className="flex items-center gap-1 text-xs font-bold text-[#f7b125] font-mono">
+                  <Flame className="w-3.5 h-3.5 fill-[#f7b125]" />
                   <span>{habit.streak} ngày</span>
                 </div>
               </div>
-              <h4 className="text-xs font-bold text-white mt-2 leading-snug">
+              <h4 className="text-xs font-bold text-[#e4e6eb] mt-2.5 leading-snug">
                 {habit.name}
               </h4>
             </div>
 
             {/* Heatmap mini squares */}
-            <div className="mt-3 pt-2 border-t border-slate-800/80 flex items-center justify-between">
-              <div className="flex items-center gap-0.5">
+            <div className="mt-3.5 pt-2.5 border-t border-[#393a3b] flex items-center justify-between">
+              <div className="flex items-center gap-1">
                 {habit.history.slice(-7).map((done, i) => (
                   <span
                     key={i}
-                    className={`w-2 h-2 rounded-[2px] ${
-                      done ? 'bg-emerald-400' : 'bg-slate-800'
+                    className={`w-2.5 h-2.5 rounded-[3px] ${
+                      done ? 'bg-[#31a24c]' : 'bg-[#3a3b3c]'
                     }`}
                   />
                 ))}
               </div>
               <div
-                className={`w-5 h-5 rounded-md flex items-center justify-center transition-colors ${
-                  habit.completedToday ? 'bg-emerald-500 text-slate-950 font-bold' : 'border border-slate-700'
+                className={`w-6 h-6 rounded-full flex items-center justify-center transition-colors ${
+                  habit.completedToday ? 'bg-[#31a24c] text-white font-bold' : 'border-2 border-[#393a3b] hover:border-[#b0b3b8]'
                 }`}
               >
-                {habit.completedToday && <Check className="w-3.5 h-3.5" />}
+                {habit.completedToday && <Check className="w-3.5 h-3.5 stroke-[3]" />}
               </div>
             </div>
           </div>
