@@ -22,15 +22,33 @@
   "skills": [
     {
       "name": "Frontend & UI/UX",
-      "skills": ["React", "TypeScript", "Tailwind CSS", "Next.js", "GSAP", "Vite"]
+      "skills": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Next.js",
+        "GSAP",
+        "Vite"
+      ]
     },
     {
       "name": "Backend & Cloud",
-      "skills": ["Node.js", "Python", "FastAPI", "PostgreSQL", "Docker", "GitHub Actions"]
+      "skills": [
+        "Node.js",
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Docker",
+        "GitHub Actions"
+      ]
     },
     {
       "name": "Gaming & Strategy",
-      "skills": ["Teamfight Tactics (Challenger Mindset)", "League of Legends (Mid/Top)", "Meta Theorycrafting"]
+      "skills": [
+        "Teamfight Tactics (Challenger Mindset)",
+        "League of Legends (Mid/Top)",
+        "Meta Theorycrafting"
+      ]
     }
   ],
   "showcaseProjects": [
@@ -38,7 +56,13 @@
       "id": "vitao",
       "title": "ViTao — Personal Universe OS",
       "description": "Trung tâm điều hành và quản lý cá nhân all-in-one: Quản lý học tập, TFT Meta live, YouTube PiP Player và Profile Showcase.",
-      "tags": ["React", "TypeScript", "Tailwind CSS", "GitHub API", "GSAP"],
+      "tags": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "GitHub API",
+        "GSAP"
+      ],
       "demoUrl": "https://namtacozz.github.io/ViTao/",
       "githubUrl": "https://github.com/namtacozz/ViTao",
       "stars": 12,
@@ -48,16 +72,49 @@
       "id": "tft-tactics-helper",
       "title": "TFT Auto Comps Scout",
       "description": "Công cụ phân tích và gợi ý trang bị chuẩn (BIS), lõi công nghệ và đội hình meta DTCL theo thời gian thực.",
-      "tags": ["TypeScript", "TFT API", "Algorithm"],
+      "tags": [
+        "TypeScript",
+        "TFT API",
+        "Algorithm"
+      ],
       "githubUrl": "https://github.com/namtacozz",
       "stars": 8,
       "highlight": true
+    },
+    {
+      "id": "study-flow-app",
+      "title": "Cyberpunk Study Tracker",
+      "description": "Theo dõi GPA đại học, tính điểm tích lũy CPA và phân bổ thời gian học tập theo phương pháp Pomodoro.",
+      "tags": [
+        "React",
+        "Web Audio",
+        "Tailwind"
+      ],
+      "githubUrl": "https://github.com/namtacozz",
+      "stars": 5,
+      "highlight": false
     }
   ],
   "highlights": [
-    { "label": "CPA Tích Lũy", "value": "3.62 / 4.0", "subtext": "Xếp loại Xuất sắc" },
-    { "label": "TFT Mùa Hiện Tại", "value": "Cao Thủ (Master)", "subtext": "Top 4 Rate: 58.4%" },
-    { "label": "GitHub Repos", "value": "24+", "subtext": "Projects & Tools" },
-    { "label": "Năng suất", "value": "1,420+ giờ", "subtext": "Code & Học tập" }
+    {
+      "label": "CPA Tích Lũy",
+      "value": "3.62 / 4.0",
+      "subtext": "Xếp loại Xuất sắc"
+    },
+    {
+      "label": "TFT Mùa Hiện Tại",
+      "value": "Cao Thủ (Master)",
+      "subtext": "Top 4 Rate: 58.4%"
+    },
+    {
+      "label": "GitHub Repos",
+      "value": "24+",
+      "subtext": "Projects & Tools"
+    },
+    {
+      "label": "Năng suất",
+      "value": "1,420+ giờ",
+      "subtext": "Code & Học tập"
+    }
   ]
 }
